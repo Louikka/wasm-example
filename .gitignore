@@ -1,0 +1,8 @@
+__pycache__/
+
+static/
+
+
+*.ini
+
+*.code-workspace
