@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>WebAssembly Example</title>
+
+    <script src="/static/wasm_exec.js"></script>
+    <script>
+        const go = new Go();
+        WebAssembly.instantiateStreaming(fetch('/static/wasm.wasm'), go.importObject).then((r) =>
+        {
+            go.run(r.instance);
+
+            const a = Add(4.5 - 1.38);
+            console.log(`4.5 - 1.38 = ${a}`);
+        });
+    </script>
+</head>
+
+
+
+<body>
+</body>
+
+</html>
